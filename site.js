@@ -27,6 +27,29 @@
     if (href === path || (path === 'index.html' && href === 'index.html')) a.classList.add('active');
   });
 
+  // ---- FAQ accordion: one open at a time, animated ----
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('.faq').forEach(function (group) {
+    group.querySelectorAll('details').forEach(function (d) {
+      d.addEventListener('toggle', function () {
+        if (!d.open) return;
+        group.querySelectorAll('details[open]').forEach(function (o) {
+          if (o !== d) o.open = false;
+        });
+        var ans = d.querySelector('.ans');
+        if (ans && !reduceMotion && ans.animate) {
+          ans.animate(
+            [
+              { opacity: 0, transform: 'translateY(-8px)', maxHeight: '0px' },
+              { opacity: 1, transform: 'none', maxHeight: ans.scrollHeight + 'px' }
+            ],
+            { duration: 340, easing: 'cubic-bezier(.2,.6,.2,1)' }
+          );
+        }
+      });
+    });
+  });
+
   // ---- click-to-play YouTube facades ----
   document.querySelectorAll('.lite-yt').forEach((btn) => {
     btn.addEventListener('click', () => {

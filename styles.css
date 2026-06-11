@@ -237,6 +237,40 @@ footer.foot{background:#161b15;color:var(--on-dark-soft);padding-block:60px;font
 .foot ul{list-style:none;display:grid;gap:9px}
 .foot a:hover{color:var(--on-dark)}
 .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-top:48px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1);font-size:.78rem}
+.legal-links a{color:inherit;border-bottom:1px solid rgba(255,255,255,.2);transition:color .2s}
+.legal-links a:hover{color:var(--on-dark)}
+
+/* ============================ WORDMARK LOGO STRIPS ============================ */
+.logos.logos--marks{align-items:baseline;gap:clamp(20px,3.2vw,44px);row-gap:18px}
+.logos--marks .lg{opacity:.8;color:var(--ink);line-height:1;white-space:nowrap}
+.logos--marks .lg.wm-sans{font-family:var(--font-sans);font-weight:800;font-size:1.18rem;letter-spacing:.01em}
+.logos--marks .lg.wm-sans-med{font-family:var(--font-sans);font-weight:700;font-size:1.02rem;letter-spacing:.06em}
+.logos--marks .lg.wm-sans-caps{font-family:var(--font-sans);font-weight:700;font-size:.92rem;letter-spacing:.18em;text-transform:uppercase}
+.logos--marks .lg.wm-serif{font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:1.22rem;letter-spacing:0}
+.logos--marks .lg.wm-serif-caps{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:1.05rem;letter-spacing:.22em;text-transform:uppercase}
+.logos--marks .lg.wm-didot{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.3rem;letter-spacing:.16em;text-transform:uppercase}
+.logos--marks .lg.wm-ital{font-family:var(--font-sans);font-weight:700;font-style:italic;font-size:1.05rem;letter-spacing:.01em}
+.logos--marks .lg.wm-spec{font-family:'Spectral',Georgia,serif;font-weight:500;font-size:1.18rem}
+/* image logo strip */
+.logos.logos--images{align-items:center;gap:clamp(24px,3.5vw,52px);row-gap:24px}
+.logos--images .lg-img{width:auto;opacity:.82;mix-blend-mode:multiply;transition:opacity .2s;display:block;object-fit:contain}
+.logos--images .lg-img:hover{opacity:1}
+
+/* ============================ CREDENTIAL TABS ============================ */
+.cred-tabs{margin-top:2.4rem}
+.cred-tab-bar{display:flex;gap:4px;flex-wrap:wrap;border-bottom:2px solid var(--line)}
+.cred-tab{font-family:var(--font-sans);font-size:.7rem;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;padding:.8em 1.45em;border-radius:8px 8px 0 0;
+  border:1px solid transparent;border-bottom:2px solid transparent;
+  background:transparent;color:var(--ink-soft);cursor:pointer;
+  transition:color .18s,background .18s;position:relative;bottom:-2px;line-height:1;white-space:nowrap}
+.cred-tab:hover{color:var(--ink)}
+.cred-tab.is-active{background:var(--surface);border-color:var(--line);border-bottom-color:var(--surface);color:var(--ink)}
+.cred-panel-wrap{background:var(--surface);border:1px solid var(--line);border-top:none;
+  border-radius:0 16px 16px 16px;padding:clamp(22px,3vw,32px);min-height:150px;overflow:hidden}
+.cred-panel{display:none}
+.cred-panel.is-active{display:block;animation:credIn .24s ease}
+@keyframes credIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 .foot .disc{max-width:70ch;color:#7e857a;font-size:.76rem;margin-top:18px;line-height:1.6}
 @media(max-width:780px){.foot-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:480px){.foot-grid{grid-template-columns:1fr}}

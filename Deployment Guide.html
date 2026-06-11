@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Appasani MD — How to Publish & Update Your Website</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f4ec; --surface:#efe9dc; --ink:#23291f; --ink-soft:#5b5f51;
+  --green:#4a5d4e; --green-deep:#202a22; --brass:#9a8654; --line:#dcd5c4;
+  --font-display:'Newsreader', Georgia, serif; --font-sans:'Hanken Grotesk', system-ui, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#cfc9ba;font-family:var(--font-sans);color:var(--ink);line-height:1.5;padding:28px 16px}
+.page{max-width:860px;margin:0 auto 28px;background:var(--bg);border:1px solid var(--line);
+  border-radius:8px;padding:54px 60px;box-shadow:0 18px 50px -30px rgba(20,30,20,.5)}
+.eyebrow{font-weight:600;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--brass)}
+h1{font-family:var(--font-display);font-weight:400;font-size:2.5rem;line-height:1.05;letter-spacing:-0.01em;margin:.5rem 0 .3rem}
+.sub{color:var(--ink-soft);font-size:1.02rem;max-width:60ch}
+.brand{font-family:var(--font-display);font-size:1.15rem;letter-spacing:.02em;float:right;line-height:1}
+.brand b{font-weight:500}.brand span{color:var(--brass)}
+.rule{height:1px;background:var(--line);border:0;margin:24px 0}
+h2{font-family:var(--font-display);font-weight:400;font-size:1.5rem;margin:0 0 4px;display:flex;align-items:baseline;gap:.6rem}
+h2 .tag{font-family:var(--font-sans);font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--brass);border:1px solid var(--brass);border-radius:999px;padding:.35em .9em;white-space:nowrap}
+.lead{color:var(--ink-soft);font-size:.95rem;margin:.2rem 0 1rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px 30px;margin-bottom:22px}
+ol{counter-reset:step;list-style:none;display:grid;gap:14px}
+ol li{position:relative;padding-left:42px;font-size:.97rem}
+ol li b{color:var(--ink)}
+ol li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:-2px;width:28px;height:28px;
+  background:var(--green-deep);color:var(--bg);border-radius:50%;display:grid;place-items:center;
+  font-family:var(--font-display);font-size:.95rem}
+code{background:#e4ddcc;border:1px solid var(--line);border-radius:5px;padding:.08em .45em;font-size:.86em;
+  font-family:ui-monospace,Menlo,monospace;color:var(--green)}
+.note{display:flex;gap:12px;align-items:flex-start;background:#edf0e6;border-left:3px solid var(--brass);
+  border-radius:0 10px 10px 0;padding:14px 18px;margin-top:14px;font-size:.88rem;color:var(--ink-soft)}
+.note b{color:var(--ink)}
+.pick{font-size:.95rem;color:var(--ink-soft);margin:2px 0 22px}
+.pick b{color:var(--green)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.mini{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+.mini h3{font-family:var(--font-display);font-weight:500;font-size:1.05rem;margin-bottom:5px}
+.mini p{font-size:.85rem;color:var(--ink-soft)}
+.foot{margin-top:6px;font-size:.78rem;color:var(--ink-soft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.foot a{color:var(--green)}
+a{color:var(--green)}
+@media print{
+  body{background:#fff;padding:0}
+  .page{box-shadow:none;border:0;border-radius:0;margin:0;max-width:none;padding:0 14mm}
+  .page + .page{page-break-before:always}
+  @page{margin:14mm}
+}
+@media(max-width:620px){.page{padding:34px 24px}.two{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="page">
+  <div class="brand"><b>APPASANI</b> <span>MD</span></div>
+  <span class="eyebrow">Website Owner's Guide</span>
+  <h1>Publishing &amp; updating your website</h1>
+  <p class="sub">Your site is a folder of ready-to-go files. This guide shows the two simplest ways to put it online at appasanimd.com — and how to make changes afterward. No coding required.</p>
+  <hr class="rule">
+
+  <div class="card">
+    <h2>What you have <span class="tag">Start here</span></h2>
+    <p class="lead">A downloaded ZIP named <code>_site</code>. Double-click to <b>unzip</b> it first — everything lives inside that one folder (all pages, photos, and the <code>assets</code> folder). Keep them together; that's the whole website.</p>
+    <p class="pick">Then choose a path below. <b>Option A</b> is fastest to go live today. <b>Option B</b> is best for easy ongoing edits.</p>
+  </div>
+
+  <h2>Option A &nbsp;·&nbsp; Netlify Drop <span class="tag">~2 minutes · no account linking</span></h2>
+  <p class="lead">The quickest way to see your site live on your domain.</p>
+  <div class="card">
+    <ol>
+      <li><b>Unzip</b> the downloaded folder (double-click it).</li>
+      <li>In your browser, go to <code>app.netlify.com/drop</code> and sign in (free).</li>
+      <li><b>Drag the unzipped folder</b> onto the drop area. Your site goes live instantly on a temporary web address.</li>
+      <li>Open <b>Site configuration → Domain management → Add a domain</b>, enter <b>appasanimd.com</b>, and follow the on-screen DNS steps with your domain registrar.</li>
+    </ol>
+    <div class="note"><span>↻</span><div><b>To update later:</b> ask me for a fresh copy, then drag the new folder onto the <b>same</b> Netlify site (Deploys → drag-and-drop). It replaces the old version in seconds.</div></div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="brand"><b>APPASANI</b> <span>MD</span></div>
+  <h2>Option B &nbsp;·&nbsp; GitHub + Netlify <span class="tag">Best for ongoing edits · auto-publishes</span></h2>
+  <p class="lead">A one-time setup that makes every future change publish automatically. You create the repository once (my access to GitHub is read-only), then connect Netlify to it.</p>
+
+  <div class="card">
+    <p class="eyebrow" style="margin-bottom:12px">Part 1 — Put the site on GitHub (one time)</p>
+    <ol>
+      <li>Go to <code>github.com</code> → click the <b>+</b> (top-right) → <b>New repository</b>.</li>
+      <li>Name it <code>appasani-md</code>, leave the defaults, and click <b>Create repository</b>.</li>
+      <li>On the next screen, click the link <b>"uploading an existing file."</b></li>
+      <li><b>Unzip</b> your folder, then <b>drag all the files inside it</b> (including the <code>assets</code> folder) into the browser window.</li>
+      <li>Click <b>Commit changes</b>. Your website now lives on GitHub.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <p class="eyebrow" style="margin-bottom:12px">Part 2 — Connect Netlify (one time)</p>
+    <ol>
+      <li>Go to <code>netlify.com</code> and sign in (free).</li>
+      <li>Click <b>Add new site → Import an existing project → Deploy with GitHub</b>.</li>
+      <li>Authorize Netlify, then pick your <b>appasani-md</b> repository.</li>
+      <li>Leave the build settings empty and click <b>Deploy</b>. Your site is live.</li>
+      <li>Add <b>appasanimd.com</b> under <b>Domain management</b>, as in Option A.</li>
+    </ol>
+    <div class="note"><span>↻</span><div><b>To update later:</b> edit any file right on GitHub (open the file → pencil icon → make changes → Commit), or have me send you updated files to drag in. Netlify republishes automatically within a minute — nothing else to do.</div></div>
+  </div>
+
+  <hr class="rule">
+  <p class="eyebrow" style="margin-bottom:12px">Two things to do once you're live</p>
+  <div class="two">
+    <div class="mini">
+      <h3>Activate the contact form</h3>
+      <p>From the live site, submit one test inquiry. The first time, you'll get a one-time confirmation email — click it to turn the form on. After that, every inquiry emails to info@appasanimd.com and is logged in your Formspree dashboard.</p>
+    </div>
+    <div class="mini">
+      <h3>Your domain is pre-set</h3>
+      <p>The site's search-engine tags already point to appasanimd.com, so there's nothing to edit when you connect the domain. Just add it in Netlify and update DNS.</p>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span>Questions on any step? Come back to our chat and I'll walk you through it live.</span>
+    <span>Appasani MD · Owner's Guide</span>
+  </div>
+</div>
+
+</body>
+</html>
